@@ -20,23 +20,13 @@ export type ResourceItem = {
 
 export const pdfResources: ResourceItem[] = [
   {
-    slug: "actividades-modelo-cel",
-    title: "Actividades para desarrollar el modelo CEL",
+    slug: "reclutamiento-y-seleccion-sigma",
+    title: "Reclutamiento y selección - Centro Médico Sigma",
     description:
-      "Documento con propuestas prácticas para fortalecer el clima laboral, la comunicación y el liderazgo en equipos de trabajo.",
-    viewUrl: modeloCel,
+      "Material de apoyo sobre el proceso de reclutamiento y selección de talento, desde el perfil del cargo hasta la evaluación final.",
+    viewUrl: reclutamientoSeleccion,
     viewType: "pdf",
-    downloadUrl: modeloCel,
-    downloadType: "pdf",
-  },
-  {
-    slug: "competencias-socioemocionales-lideres",
-    title: "Competencias socioemocionales según el modelo CEL",
-    description:
-      "Guía enfocada en habilidades socioemocionales importantes para la gestión del talento humano, la regulación emocional y la construcción de relaciones laborales positivas.",
-    viewUrl: competenciasLideres,
-    viewType: "pdf",
-    downloadUrl: competenciasLideres,
+    downloadUrl: reclutamientoSeleccion,
     downloadType: "pdf",
   },
   {
@@ -49,16 +39,7 @@ export const pdfResources: ResourceItem[] = [
     downloadUrl: desarrolloOrganizacional,
     downloadType: "pdf",
   },
-  {
-    slug: "reclutamiento-y-seleccion-sigma",
-    title: "Reclutamiento y selección - Centro Médico Sigma",
-    description:
-      "Material de apoyo sobre el proceso de reclutamiento y selección de talento, desde el perfil del cargo hasta la evaluación final.",
-    viewUrl: reclutamientoSeleccion,
-    viewType: "pdf",
-    downloadUrl: reclutamientoSeleccion,
-    downloadType: "pdf",
-  },
+
   {
     slug: "metodo-de-escala-de-puntuacion-grafica",
     title: "Método de escala de puntuación gráfica",
@@ -70,9 +51,29 @@ export const pdfResources: ResourceItem[] = [
     downloadType: "docx",
   },
   {
+    slug: "competencias-socioemocionales-lideres",
+    title: "Competencias socioemocionales según el modelo CEL",
+    description:
+      "Guía enfocada en habilidades socioemocionales importantes para la gestión del talento humano, la regulación emocional y la construcción de relaciones laborales positivas.",
+    viewUrl: competenciasLideres,
+    viewType: "pdf",
+    downloadUrl: competenciasLideres,
+    downloadType: "pdf",
+  },
+  {
+    slug: "actividades-modelo-cel",
+    title: "Actividades para desarrollar el modelo CEL",
+    description:
+      "Documento con propuestas prácticas para fortalecer el clima laboral, la comunicación y el liderazgo en equipos de trabajo.",
+    viewUrl: modeloCel,
+    viewType: "pdf",
+    downloadUrl: modeloCel,
+    downloadType: "pdf",
+  },
+
+  {
     slug: "presentacion-de-resultados-y-guia-de-recomendaciones-centro-medico-sigma",
-    title:
-      "Presentación de resultados y guía de recomendaciones - Centro Médico Sigma",
+    title: "Presentación de resultados y guía de recomendaciones - Centro Médico Sigma",
     description:
       "Este documento presenta los resultados del diagnóstico organizacional realizado en el Centro Médico Sigma como parte de las prácticas profesionales en Psicología Organizacional de Arianna Flores. Incluye un análisis del clima laboral por departamentos (basado en la escala INCLOR), una matriz FODA y una guía de recomendaciones estratégicas.",
     viewUrl: presentacionResultados,
