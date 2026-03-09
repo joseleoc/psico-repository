@@ -4,6 +4,11 @@
   "version": "0.0.0",
   "homepage": "https://joseleoc.github.io/psico-repository/",
   "type": "module",
+  "author": {
+    "name": "Leonardo Contreras",
+    "email": "joseleoc123@gmail.com",
+    "url": "https://joseleoc.com"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
