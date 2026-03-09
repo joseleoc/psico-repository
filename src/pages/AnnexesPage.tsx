@@ -1,41 +1,42 @@
 import { useEffect, useState } from "react";
+import anexo1Image from "../assets/images/annexes/anexo-1-taller-sobre-reclutamiento-y-seleccion.jpeg";
+import anexo2Image from "../assets/images/annexes/anexo-2-material-visual-para-el-taller-de-reclutamiento-y-seleccion.jpeg";
+import anexo3Image from "../assets/images/annexes/anexo-3-taller-sobre-desarrollo-organizacional.jpeg";
+import anexo4Image from "../assets/images/annexes/anexo-4-material-visual-para-el-taller-de-desarrollo-organizacional.jfif";
+import anexo5Image from "../assets/images/annexes/anexo-5-participacion-de-la-tutora-institucional.jfif";
 
 type AnnexItem = {
   id: number;
   title: string;
-  description: string;
+  image: string;
 };
 
 const annexItems: AnnexItem[] = [
   {
     id: 1,
-    title: "Jornada de integración",
-    description: "Actividad grupal con el equipo durante el proceso formativo.",
+    title: "Taller sobre reclutamiento y selección.",
+    image: anexo1Image,
   },
   {
     id: 2,
-    title: "Sesión de trabajo",
-    description: "Espacio de socialización de resultados y buenas prácticas.",
+    title: "Material visual para el taller de reclutamiento y selección.",
+    image: anexo2Image,
   },
   {
     id: 3,
-    title: "Taller de competencias",
-    description: "Dinámica sobre competencias socioemocionales en contexto laboral.",
+    title: "Taller sobre desarrollo organizacional.",
+    image: anexo3Image,
   },
   {
     id: 4,
-    title: "Cierre de experiencia",
-    description: "Registro fotográfico de la presentación de aprendizajes finales.",
+    title: "Material visual para el taller de desarrollo organizacional.",
+    image: anexo4Image,
   },
   {
     id: 5,
-    title: "Trabajo colaborativo",
-    description: "Momento de construcción conjunta de propuestas de mejora.",
-  },
-  {
-    id: 6,
-    title: "Acompañamiento técnico",
-    description: "Espacio de orientación sobre actividades del proyecto.",
+    title:
+      "Anexo 5. Participación de la tutora institucional Lic. Diana Vargas y el profesor universitario Frank Rivas en el taller de Desarrollo Organizacional.",
+    image: anexo5Image,
   },
 ];
 
@@ -96,9 +97,12 @@ function AnnexesPage() {
                   : "border-slate-200 hover:border-slate-300"
               }`}
               aria-label={`Ver detalle de ${item.title}`}>
-              <div className="flex aspect-[4/3] items-center justify-center bg-gradient-to-br from-slate-200 to-slate-300 text-sm font-semibold text-slate-600">
-                Foto {item.id}
-              </div>
+              <img
+                src={item.image}
+                alt={item.title}
+                className="aspect-4/3 w-full object-cover"
+                loading="lazy"
+              />
               <div className="px-3 py-2 text-xs font-medium text-slate-700 sm:text-sm">
                 {item.title}
               </div>
@@ -113,31 +117,25 @@ function AnnexesPage() {
           role="dialog"
           aria-modal="true"
           aria-label={`Detalle de ${selectedItem.title}`}
-          onClick={closeDialog}
-        >
+          onClick={closeDialog}>
           <article
-            className="w-full max-w-3xl overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl"
-            onClick={(event) => event.stopPropagation()}
-          >
-            <div className="flex items-center justify-between border-b border-slate-200 px-4 py-3 sm:px-6">
-              <h2 className="text-base font-semibold text-slate-900 sm:text-lg">{selectedItem.title}</h2>
+            className="relative overflow-hidden rounded-2xl"
+            onClick={(event) => event.stopPropagation()}>
+            <div className="absolute top-2 right-2 flex items-center justify-end">
               <button
                 type="button"
                 onClick={closeDialog}
-                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-600 transition-colors hover:bg-slate-100"
-                aria-label="Cerrar detalle"
-              >
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 bg-white/95 text-slate-600 shadow-sm transition-colors hover:bg-slate-100"
+                aria-label="Cerrar detalle">
                 ✕
               </button>
             </div>
 
-            <div className="flex aspect-[16/9] items-center justify-center bg-gradient-to-br from-slate-200 to-slate-300 text-lg font-semibold text-slate-600 sm:text-2xl">
-              Vista detallada - Foto {selectedItem.id}
-            </div>
-
-            <div className="px-4 py-4 sm:px-6 sm:py-5">
-              <p className="text-sm leading-6 text-slate-600 sm:text-base">{selectedItem.description}</p>
-            </div>
+            <img
+              src={selectedItem.image}
+              alt={selectedItem.title}
+              className="block max-h-[90vh] max-w-[95vw] h-auto w-auto object-contain"
+            />
           </article>
         </div>
       )}
