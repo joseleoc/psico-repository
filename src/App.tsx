@@ -9,7 +9,7 @@ function App() {
   const navItems = [
     { label: 'Inicio', to: '/' },
     { label: 'Recursos', to: '/resources' },
-    { label: 'Guía de recomendaciones', to: '/resources/actividades-modelo-cel' },
+    { label: 'Guía de recomendaciones', to: '/resources/presentacion-de-resultados-y-guia-de-recomendaciones-centro-medico-sigma' },
     { label: 'Anexos de la experiencia', to: '/annexes' },
   ]
 

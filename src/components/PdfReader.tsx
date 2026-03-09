@@ -6,9 +6,15 @@ import "@react-pdf-viewer/full-screen/lib/styles/index.css";
 
 type PdfReaderProps = {
   fileUrl: string;
+  downloadUrl?: string;
+  downloadType?: "pdf" | "docx";
 };
 
-function PdfReader({ fileUrl }: PdfReaderProps) {
+function PdfReader({
+  fileUrl,
+  downloadUrl,
+  downloadType = "pdf",
+}: PdfReaderProps) {
   const [numPages, setNumPages] = useState(0);
   const [pageNumber, setPageNumber] = useState(1);
   const workerUrl = useMemo(
@@ -41,10 +47,14 @@ function PdfReader({ fileUrl }: PdfReaderProps) {
           </span>
 
           <a
-            href={fileUrl}
+            href={downloadUrl ?? fileUrl}
             download
             className="inline-flex items-center rounded border border-white/40 px-2.5 py-1 text-xs font-medium text-white no-underline transition-colors hover:bg-white/10">
-            <img src={DownloadIcon} alt="Descargar PDF" className="h-4 w-4" />
+            <img
+              src={DownloadIcon}
+              alt={downloadType === "docx" ? "Descargar Word" : "Descargar PDF"}
+              className="h-4 w-4"
+            />
           </a>
         </div>
       </div>

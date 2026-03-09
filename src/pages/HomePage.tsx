@@ -11,7 +11,7 @@ function HomePage() {
   const featuredCards = [
     {
       icon: cardIconSelection,
-      title: "Presentación sobre Reclutamiento y Selección",
+      title: "Material de apoyo sobre fortalecimiento de competencias socioemocionales",
       slug: "reclutamiento-y-seleccion-sigma",
     },
     {
@@ -22,7 +22,8 @@ function HomePage() {
     {
       icon: cardIconSocio,
       title: "Presentación sobre Fortalecimiento de Competencias Socioemocionales",
-      slug: "competencias-socioemocionales-lideres",
+      slug: undefined,
+      search: "modelo CEL",
     },
   ];
 
@@ -72,25 +73,21 @@ function HomePage() {
         {featuredCards.map((card) => (
           <article
             className="flex cursor-pointer items-center gap-3 rounded-md transition-colors hover:bg-slate-50 focus-within:bg-slate-50 sm:gap-4"
-            key={card.title}
-          >
+            key={card.title}>
             <button
               type="button"
-              onClick={() => navigate(`/resources/${card.slug}`)}
+              onClick={() => navigate(card.slug ? `/resources/${card.slug}` : `/resources?q=${card.search}`)}
               className="flex cursor-pointer w-full items-center gap-3 bg-transparent p-0 text-left border-none sm:gap-4"
-              aria-label={`Abrir ${card.title}`}
-            >
-            <div className="flex h-[68px] w-[68px] shrink-0 items-center justify-center rounded-full md:h-[90px] md:w-[90px]">
-              <img
-                src={card.icon}
-                alt=""
-                className="h-[52px] w-[52px] object-contain md:h-[90px] md:w-[90px]"
-              />
-            </div>
+              aria-label={`Abrir ${card.title}`}>
+              <div className="flex h-[68px] w-[68px] shrink-0 items-center justify-center rounded-full md:h-[90px] md:w-[90px]">
+                <img
+                  src={card.icon}
+                  alt=""
+                  className="h-[52px] w-[52px] object-contain md:h-[90px] md:w-[90px]"
+                />
+              </div>
 
-            <h2 className="m-0 text-base font-bold text-[#0f1723] ">
-              {card.title}
-            </h2>
+              <h2 className="m-0 text-base font-bold text-[#0f1723] ">{card.title}</h2>
             </button>
           </article>
         ))}

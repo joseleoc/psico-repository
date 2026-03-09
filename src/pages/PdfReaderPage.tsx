@@ -20,7 +20,11 @@ function PdfReaderPage() {
       <div className="mx-auto max-w-[1320px] border border-slate-300 bg-[#ececec]">
         <div className="grid grid-cols-1  gap-5 bg-gradient-to-r from-[#346fbc] to-[#74d5d9] px-3 py-4 sm:px-6 sm:py-7 lg:grid-cols-[1.15fr_0.85fr]  lg:items-start lg:gap-4">
           <div className="order-2 lg:order-1">
-            <PdfReader fileUrl={resource.fileUrl} />
+            <PdfReader
+              fileUrl={resource.viewUrl}
+              downloadUrl={resource.downloadUrl}
+              downloadType={resource.downloadType}
+            />
           </div>
 
           <aside className="pr-0 text-white lg:pr-5 order-1 lg:order-2">
