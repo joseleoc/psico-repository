@@ -11,7 +11,7 @@ function HomePage() {
   const featuredCards = [
     {
       icon: cardIconSelection,
-      title: "Material de apoyo sobre fortalecimiento de competencias socioemocionales",
+      title: "Presentación sobre Reclutamiento y Selección",
       slug: "reclutamiento-y-seleccion-sigma",
     },
     {
@@ -21,7 +21,7 @@ function HomePage() {
     },
     {
       icon: cardIconSocio,
-      title: "Presentación sobre Fortalecimiento de Competencias Socioemocionales",
+      title: "Material sobre Fortalecimiento de Competencias Socioemocionales",
       slug: undefined,
       search: "modelo CEL",
     },
