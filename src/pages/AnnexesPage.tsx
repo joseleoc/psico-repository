@@ -35,7 +35,7 @@ const annexItems: AnnexItem[] = [
   {
     id: 5,
     title:
-      "Anexo 5. Participación de la tutora institucional Lic. Diana Vargas y el profesor universitario Frank Rivas en el taller de Desarrollo Organizacional.",
+      "Participación de la tutora institucional Lic. Diana Vargas y el profesor universitario Frank Rivas en el taller de Desarrollo Organizacional.",
     image: anexo5Image,
   },
 ];
